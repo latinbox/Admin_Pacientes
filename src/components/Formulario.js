@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = () => {
     // Crear State de citas
@@ -28,8 +29,11 @@ const Formulario = () => {
             actualizarError(true);
             return;
         }
+        // eliminar mensaje previo
+          actualizarError(false);
         //asignar id
-
+          cita.id = uuidv4();
+          console.log(cita);
         //crear cita
         //reiniciar form
 
@@ -53,7 +57,7 @@ const Formulario = () => {
                  <label>Nombre Dueño</label>
                 <input 
                  type="text"
-                 name="mascota"
+                 name="propietario"
                  className="u-full-width"
                  placeholder="Nombre Dueño Mascota"
                  onChange={actualizarState}
