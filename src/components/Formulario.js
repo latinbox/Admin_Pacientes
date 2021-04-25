@@ -21,7 +21,7 @@ const Formulario = ({crearCita}) => {
     //Extraer valores
     const {mascota, propietario, fecha, hora, sintomas} = cita;
 
-    // accion cuando el usuario presiona el botón
+    // accion cuando el usuario presiona el botón agregar cita
     const submitCita = e => {
         e.preventDefault();
         //validar
@@ -33,7 +33,6 @@ const Formulario = ({crearCita}) => {
           actualizarError(false);
         //asignar id
           cita.id = uuidv4();
-          console.log(cita);
         //crear cita
           crearCita(cita);
         //reiniciar form
@@ -43,7 +42,7 @@ const Formulario = ({crearCita}) => {
             fecha: '',
             hora: '',
             sintomas: ''
-        });
+        })
     }
     return ( 
         <Fragment>
@@ -101,6 +100,7 @@ const Formulario = ({crearCita}) => {
         </Fragment>
         
     );
+    
 }
  
 export default Formulario;
